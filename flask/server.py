@@ -32,28 +32,13 @@ def index():
     rsp = flask.jsonify(spec)
     return rsp
 
-@app.route('/encode', methods=['GET'])
+@app.route('/encode/<int:x>/<int:y>/<int:z>', methods=['GET'])
+@app.route('/encode/<int:x>/<int:y>', methods=['GET'])
 @cross_origin(methods=['GET'])
-def mk_hilbert():
-
-    qs = flask.request.query_string
-    qs = urlparse.parse_qs(qs)
-
-    x = qs.get('x', None)
-    y = qs.get('y', None)
-    z = qs.get('z', None)
-
-    if not x:
-        flask.abort(400)
-
-    if not y:
-        flask.abort(400)
+def mk_hilbert(x, y, z=None):
 
     if not z:
         z = int(time.time())
-
-    x = int(x[0])
-    y = int(y[0])
 
     coords = (x, y, z)
     i = hilbert.Hilbert_to_int(coords)
@@ -61,19 +46,9 @@ def mk_hilbert():
     rsp = flask.jsonify(x=x, y=y, z=z, i=i)
     return rsp
 
-@app.route('/decode', methods=['GET'])
+@app.route('/decode/<int:i>', methods=['GET'])
 @cross_origin(methods=['GET'])
-def mk_int():
-
-    qs = flask.request.query_string
-    qs = urlparse.parse_qs(qs)
-
-    i = qs.get('i', None)
-
-    if not i:
-        flask.abort(400)
-
-    i = int(i[0])
+def mk_int(i):
 
     (x, y, z)= hilbert.int_to_Hilbert(i, 3)
 
