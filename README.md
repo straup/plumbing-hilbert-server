@@ -8,6 +8,8 @@ To start the server:
 
 	$> gunicorn --chdir /usr/local/plumbing-hibert-server/flask/
 
+_Strictly speaking you don't need to use [gunicorn](http://www.gunicorn.org) but I like it. Note that the use of the `--chdir` flag requires using gunicorn version 18 or higher._
+
 To encode a triple:
 
 	$> curl 'http://127.0.0.1:8000/encode/122419304/37764832/1268809061'
