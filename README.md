@@ -6,7 +6,7 @@ A simple Flask-based HTTP pony for encoding and decoding (x,y,z) triples in to p
 
 To start the server:
 
-	$> gunicorn --chdir /usr/local/plumbing-hibert-server/flask/
+	$> gunicorn --chdir /usr/local/plumbing-hibert-server/flask/ server:app
 
 _Strictly speaking you don't need to use [gunicorn](http://www.gunicorn.org) but I like it. Note that the use of the `--chdir` flag requires using gunicorn version 18 or higher._
 
