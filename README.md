@@ -30,6 +30,10 @@ To decode a Hilbert point:
 		"z": 1268809061
 	}
 
+## Notes and gotchas
+
+Automatic conversion of "things" to integers (for example an IP address) is not currently supported. This includes stuff like negative numbers.
+
 ## See also
 
 * http://www.tiac.net/~sw/2008/10/Hilbert/
