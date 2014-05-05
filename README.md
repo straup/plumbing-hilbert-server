@@ -38,3 +38,7 @@ Automatic conversion of "things" to integers (for example an IP address) is not 
 
 * http://www.tiac.net/~sw/2008/10/Hilbert/
 * https://spacetimeid.appspot.com/
+
+## See also because... I'm not sure why but it seems relevant
+
+* https://github.com/client9/snowflake2time
